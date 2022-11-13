@@ -87,7 +87,8 @@ public class AllTreeTraversals {
             }
             if(st.isEmpty()) return;
             root = st.pop();
-            if(!st.isEmpty() && st.peek() == root) root = root.right;
+            if(!st.isEmpty() && st.peek() == root) 
+                root = root.right;
             else{
                 System.out.print(root.data + " ");
                 root = null;
