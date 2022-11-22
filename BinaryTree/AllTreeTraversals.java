@@ -3,6 +3,7 @@ import java.util.Stack;
 class BinaryTreeNode{
     int data;
     BinaryTreeNode left,right;
+    //constructor
     BinaryTreeNode(int data){
         this.data = data;
         left = right = null;
