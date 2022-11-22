@@ -14,9 +14,11 @@ public class DifferentBitsSumPairwise {
     public static void main(String args[]){
         int arr[] = {1,2};
         int arr1[] = {1,3,5};
+        int arr2[] = {4,14,2};
 
         int ans = differenceBitSum(arr);
         System.out.println(ans);
         System.out.println(differenceBitSum(arr1));
+        System.out.println(differenceBitSum(arr2));
     }
 }
