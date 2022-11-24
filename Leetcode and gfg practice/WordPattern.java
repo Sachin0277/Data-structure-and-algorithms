@@ -6,7 +6,7 @@ public class WordPattern {
         String words[] = s.split(" ");//spliting the string as array of element (words as elements)
         if(p.length() != words.length)
             return false;
-        Map map = new HashMap();
+        HashMap map = new HashMap<>();
         for(Integer i = 0;i<p.length();i++){
             if(map.put(p.charAt(i),i) != map.put(words[i],i))
                 return false;
