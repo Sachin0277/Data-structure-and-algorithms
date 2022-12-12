@@ -10,7 +10,7 @@ public class CheckIfAStringIsPalindrome {
     }
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
-        System.out.psitrintln("Enter the string to check whether it is palindrome or not :");
+        System.out.println("Enter the string to check whether it is palindrome or not :");
         String s = sc.nextLine();
 
         if(palin(0,s))
