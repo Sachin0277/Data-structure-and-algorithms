@@ -6,6 +6,9 @@ public class PrintAllSubsequences {
         if(i == arr.length){
             if(res.size() > 0)
             System.out.println(res);
+            if(res.size() == 0){
+                System.out.println("{ }");
+            }
             return;
         }
         else{
