@@ -1,1 +1,2 @@
-num%10-k
+
+        return node.next;
