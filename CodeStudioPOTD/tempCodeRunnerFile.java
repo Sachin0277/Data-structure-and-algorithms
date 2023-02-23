@@ -1,2 +1,1 @@
-
-        return node.next;
+n-cnt
