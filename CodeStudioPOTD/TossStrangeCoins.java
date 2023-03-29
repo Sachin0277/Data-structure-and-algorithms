@@ -21,6 +21,16 @@ public class TossStrangeCoins {
         }
         return dp[target];
 	}
+    public static double tossStrangeCoinsModified(ArrayList<Double> prob, int target){
+        double[] dp = new double[target+1];
+        dp[0] = 1.0;
+        for(double ele : prob){
+            for(int i=target;i>=0;i--){
+                dp[i] = (i > 0 ? dp[i-1]*ele : 0)+dp[i]*(1-ele);
+            }
+        }
+        return dp[target];
+    }
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -33,6 +43,7 @@ public class TossStrangeCoins {
         //call function
         double ans = tossStrangeCoins(prob, target);
         System.out.println(ans);
+        System.out.println(tossStrangeCoinsModified(prob, target));
         sc.close();
     }
 }
