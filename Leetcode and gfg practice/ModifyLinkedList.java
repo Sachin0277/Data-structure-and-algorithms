@@ -51,8 +51,11 @@ public class ModifyLinkedList {
     }
     private static void printList(Node head){
         while(head != null){
-            System.out.print(head.data +"->");
+            System.out.print(head.data);
             head = head.next;
+            if(head != null){
+                System.out.print(" -> ");
+            }
         }
     }
     public static void main(String[] args) {
