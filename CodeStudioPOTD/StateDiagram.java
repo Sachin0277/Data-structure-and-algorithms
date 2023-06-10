@@ -9,8 +9,8 @@
 
 class Node{
     Character data;
-    Node next;
-    Node random;
+    node next;
+    node random;
     Node(Character data){
         this.data = data;
         this.next = null;
@@ -19,8 +19,8 @@ class Node{
 }
 public class StateDiagram {
 
-    private static boolean isItAccepted(Node root,String str){
-        Node temp = new Node('0');
+    private static boolean isItAccepted(node root, String str){
+        node temp = new node('0');
         temp.next = root;
         int n = str.length();
         int i=0;
@@ -47,9 +47,9 @@ public class StateDiagram {
 
     public static void main(String args[]){
         //creating the fintie state machine using linked list data structure
-        Node root = new Node('a');
-        root.next = new Node('b');
-        root.random = new Node('c');
+        node root = new node('a');
+        root.next = new node('b');
+        root.random = new node('c');
         root.next.next = root.random;
         root.next.random = root.next;
         root.random.random = root.random;

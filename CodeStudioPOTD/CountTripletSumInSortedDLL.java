@@ -1,20 +1,20 @@
 import java.util.HashMap;
-class Node{
+class Node5 {
     int data;
-    Node prev;
-    Node next;
-    Node(int data){
+    node prev;
+    node next;
+    Node5(int data){
         this.data = data;
         prev = next = null;
     }
 }
 public class CountTripletSumInSortedDLL {
 
-    public static int countTriplets(Node head,int x){
+    public static int countTriplets(node head, int x){
         // Write your code here
         int count = 0;
-        HashMap<Integer,Node> map = new HashMap<>();
-        Node p=head,p1,p2;
+        HashMap<Integer, node> map = new HashMap<>();
+        node p=head,p1,p2;
         while(p != null){
             map.put(p.data,p);
             p = p.next;
@@ -30,8 +30,8 @@ public class CountTripletSumInSortedDLL {
         return count/3;
     }
 
-    private static Node insert(Node head,int val){
-        Node temp = new Node(val);
+    private static node insert(node head, int val){
+        node temp = new node(val);
         if(head == null)
             head = temp;
         else{
@@ -43,7 +43,7 @@ public class CountTripletSumInSortedDLL {
     }
 
     public static void main(String[] args) {
-        Node head = null;
+        Node5 head = null;
              
             // insert values in sorted order
             head = insert(head, 9);

@@ -1,6 +1,6 @@
 class Node{
     int data;
-    Node next;
+    node next;
     Node(int data){
         this.data = data;
         this.next = null;
@@ -8,10 +8,10 @@ class Node{
 }
 
 public class RearrangeLinkedList {
-    private static Node reverseList(Node head){
-        Node cur = head,prev = null;
+    private static node reverseList(node head){
+        node cur = head,prev = null;
         while(cur != null){
-            Node next = cur.next;
+            node next = cur.next;
             cur.next = prev;
             prev = cur;
             cur = next;
@@ -20,21 +20,21 @@ public class RearrangeLinkedList {
         return head;
     }
 
-    private static Node rearrangeList(Node head){
+    private static node rearrangeList(node head){
         if(head == null) return null;
-        Node fast = head.next,slow = head;
+        node fast = head.next,slow = head;
         while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
-        Node node1 = head;
-        Node node2 = slow.next;
+        node node1 = head;
+        node node2 = slow.next;
         slow.next = null;
 
         node2 = reverseList(node2);
 
-        Node node = new Node(0);
-        Node cur = node;
+        node node = new node(0);
+        node cur = node;
         while(node1 != null || node2 != null){
             if(node1 != null){
                 cur.next = node1;
@@ -52,7 +52,7 @@ public class RearrangeLinkedList {
 
     }
 
-    private static void printList(Node head){
+    private static void printList(node head){
         while(head != null){
             System.out.print(head.data + "->");
             head = head.next;
@@ -60,14 +60,14 @@ public class RearrangeLinkedList {
         System.out.print("NULL");
     }
     public static void main(String args[]){
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
+        node head = new node(1);
+        head.next = new node(2);
+        head.next.next = new node(3);
+        head.next.next.next = new node(4);
+        head.next.next.next.next = new node(5);
 
 
-        Node ans = rearrangeList(head);
+        node ans = rearrangeList(head);
         printList(ans);
     }
 }

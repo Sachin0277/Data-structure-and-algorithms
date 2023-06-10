@@ -1,1 +1,0 @@
-prices[i] * (n-i)
