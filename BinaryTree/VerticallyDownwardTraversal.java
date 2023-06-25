@@ -1,17 +1,17 @@
 import java.util.Queue;
 import java.util.LinkedList;
 class Pair{
-    Node node;
+    node node;
     int colm;
-    Pair(Node node,int colm){
+    Pair(node node, int colm){
         this.node = node;
         this.colm = colm;
     }
 }
-class Node{
+class Node4 {
     int data ;
-    Node left , right;
-    Node(int data){
+    node left , right;
+    Node4(int data){
         this.data = data;
         left = right = null;
     }
@@ -19,7 +19,7 @@ class Node{
 
 
 public class VerticallyDownwardTraversal {
-    private static long verticallyDownBST(Node root,int target)
+    private static long verticallyDownBST(node root, int target)
     {
         long res = 0;
         while(root != null){
@@ -36,7 +36,7 @@ public class VerticallyDownwardTraversal {
         
         while(!q.isEmpty()){
             Pair pair = q.remove();
-            Node cur = pair.node;
+            node cur = pair.node;
             if(pair.colm == 0){
                 res += cur.data;
             }
@@ -47,14 +47,14 @@ public class VerticallyDownwardTraversal {
 
     }
     public static void main(String args[]){
-        Node root = new Node(25);
-        root.left = new Node(20);
-        root.right = new Node(35);
-        root.left.left = new Node(15);
-        root.left.right = new Node(22);
-        root.right.left = new Node(30);
-        root.right.right = new Node(45);
-        root.right.left.right = new Node(32); 
+        node root = new node(25);
+        root.left = new node(20);
+        root.right = new node(35);
+        root.left.left = new node(15);
+        root.left.right = new node(22);
+        root.right.left = new node(30);
+        root.right.right = new node(45);
+        root.right.left.right = new node(32);
 
         int target = 35;
 

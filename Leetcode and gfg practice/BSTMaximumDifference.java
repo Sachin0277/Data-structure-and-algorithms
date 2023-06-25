@@ -1,15 +1,15 @@
 class Node{
     int data;
-    Node left;
-    Node right;
+    node left;
+    node right;
     Node(int data){
         this.data = data;
         left  = right = null;
     }
 }
 public class BSTMaximumDifference {
-    private static int maxDifferenceBST(Node root, int target){
-        Node targetNode = null; 
+    private static int maxDifferenceBST(node root, int target){
+        node targetNode = null;
         long targetSum = 0;
         while(root != null){
             if(root.data == target){
@@ -28,7 +28,7 @@ public class BSTMaximumDifference {
         return (int)Math.max(targetSum-lsum,targetSum-rsum);
     }
 
-    private static long childSum(Node root){
+    private static long childSum(node root){
         if(root==null) return 0;
         long lsum = childSum(root.left);
         long rsum = childSum(root.right);
@@ -38,14 +38,14 @@ public class BSTMaximumDifference {
 
     }
     public static void main(String[] args) {
-        Node root = new Node(25);
-        root.left = new Node(20);
-        root.right = new Node(35);
-        root.left.left = new Node(15);
-        root.left.right = new Node(22);
-        root.right.left = new Node(30);
-        root.right.right = new Node(45);
-        root.right.left.right = new Node(32);
+        node root = new node(25);
+        root.left = new node(20);
+        root.right = new node(35);
+        root.left.left = new node(15);
+        root.left.right = new node(22);
+        root.right.left = new node(30);
+        root.right.right = new node(45);
+        root.right.left.right = new node(32);
         int target = 20;
         int ans = maxDifferenceBST(root,target);
         System.out.println(ans);

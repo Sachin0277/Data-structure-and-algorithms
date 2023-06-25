@@ -1,10 +1,10 @@
 //package BinaryTree; 
-class Node{
+class node {
     int data;
-    Node left;
-    Node right;
+    node left;
+    node right;
 
-    Node(int data){
+    node(int data){
         this.data = data;
         left = null;
         right = null;
@@ -14,7 +14,7 @@ class Node{
 public class MaximumSumInLongestPath {
     public static int maxSum ;
     public static int maxLen ;
-    public static void sumOfLongestPath(Node root,int sum,int len){
+    public static void sumOfLongestPath(node root, int sum, int len){
         if(root == null){
             if(maxLen < len){
                 maxLen = len;
@@ -28,7 +28,7 @@ public class MaximumSumInLongestPath {
         sumOfLongestPath(root.left,sum+root.data,len+1);
         sumOfLongestPath(root.right,sum+root.data,len+1);
     }
-    public static int sumOfLongestPath(Node root){
+    public static int sumOfLongestPath(node root){
         if(root == null) return 0;
         maxSum = Integer.MIN_VALUE;
         maxLen = 0;
@@ -36,12 +36,12 @@ public class MaximumSumInLongestPath {
         return maxSum;
     }
     public static void main(String[] args) {
-        Node node = new Node(5);
-        node.left = new Node(6);
-        node.right = new Node(7);
-        node.right.left = new Node(8);
-        node.right.right = new Node(10);
-        node.right.left.right = new Node(9);
+        node node = new node(5);
+        node.left = new node(6);
+        node.right = new node(7);
+        node.right.left = new node(8);
+        node.right.right = new node(10);
+        node.right.left.right = new node(9);
 
         int maxSum = sumOfLongestPath(node);
         System.out.println("The maximum sum of elements in longest path is: "+maxSum);

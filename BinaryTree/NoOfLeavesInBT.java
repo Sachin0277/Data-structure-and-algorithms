@@ -4,21 +4,21 @@ import java.util.Queue;
 /*
  * Write a program to find number of leaves in binary tree without recursion
  */
-class Node{
+class Node2 {
     int data;
-    Node left,right;
-    Node(int data){
+    node left,right;
+    Node2(int data){
         this.data = data;
         left = right = null;
     }
 }
 public class NoOfLeavesInBT {
-    private static int countNumOfLeaves(Node root){
+    private static int countNumOfLeaves(node root){
         int leaves = 0;
-        Queue<Node> q = new LinkedList<>();
+        Queue<node> q = new LinkedList<>();
         q.add(root);
         while(!q.isEmpty()){
-            Node cur = q.poll();
+            node cur = q.poll();
             if(cur.left == null && cur.right == null){
                 leaves++;
             }
@@ -28,12 +28,12 @@ public class NoOfLeavesInBT {
         return leaves;
     }
    public static void main(String[] args) {
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.left = new Node(4);
-        root.left.right = new Node(5);
-        root.right.left = new Node(6);
+        node root = new node(1);
+        root.left = new node(2);
+        root.right = new node(3);
+        root.left.left = new node(4);
+        root.left.right = new node(5);
+        root.right.left = new node(6);
 
         //calling method to find the number of leaves in binary tree 
        

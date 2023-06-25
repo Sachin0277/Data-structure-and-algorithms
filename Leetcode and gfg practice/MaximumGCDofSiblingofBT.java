@@ -3,7 +3,7 @@ import java.util.Queue;
 
 class Node{
     int data;
-    Node left,right;
+    node left,right;
     Node(int data){
         this.data = data;
     }
@@ -14,14 +14,14 @@ public class MaximumGCDofSiblingofBT {
             return a;
         return gcd(b,a%b);
     }
-    private static int maxGCD(Node root){
+    private static int maxGCD(node root){
         int max = 0;
         int outNode = 0; 
         if(root == null) return 0;
-        Queue<Node> q = new LinkedList<>();
+        Queue<node> q = new LinkedList<>();
         q.add(root);
         while(!q.isEmpty()){
-            Node cur = q.poll();
+            node cur = q.poll();
             if(cur.left != null) q.offer(cur.left);
             if(cur.right != null) q.offer(cur.right);
             if(cur.left != null && cur.right != null && max <= gcd(cur.left.data, cur.right.data)){
@@ -32,13 +32,13 @@ public class MaximumGCDofSiblingofBT {
         return outNode;
     }
     public static void main(String args[]){
-        Node root = new Node(4);
-        root.left = new Node(5);
-        root.right = new Node(2);
-        root.left.left = new Node(3);
-        root.left.right = new Node(1);
-        root.left.left.left = new Node(6);
-        root.left.left.right = new Node(12);
+        node root = new node(4);
+        root.left = new node(5);
+        root.right = new node(2);
+        root.left.left = new node(3);
+        root.left.right = new node(1);
+        root.left.left.left = new node(6);
+        root.left.left.right = new node(12);
 
         //calling function which will find the maximum gcd of siblings of the given binary tree
         int ans = maxGCD(root);

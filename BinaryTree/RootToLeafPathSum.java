@@ -1,9 +1,9 @@
 import java.util.Stack;
 
-class TreeNode{
+class TreeNode5 {
     int data;
-    TreeNode left,right;
-    TreeNode(int data){
+    treenode left,right;
+    TreeNode5(int data){
         this.data = data;
         left = null;
         right = null;
@@ -13,11 +13,11 @@ public class RootToLeafPathSum {
     /*
      * Method to find root to leaf path sum equal to given number 
      */
-    private static boolean rootToLeafPathSum(TreeNode root,int k){
-        Stack<TreeNode> st = new Stack<>();
+    private static boolean rootToLeafPathSum(treenode root, int k){
+        Stack<treenode> st = new Stack<>();
         st.push(root);
         while(!st.isEmpty() && root != null){
-            TreeNode temp = st.pop();
+            treenode temp = st.pop();
             if(temp.left == null && temp.right == null){
                 if(temp.data == k){
                     return true;
@@ -39,12 +39,12 @@ public class RootToLeafPathSum {
            /*
             * Creating a binary tree by initialising using constructor
             */
-            TreeNode root = new TreeNode(10);
-            root.left = new TreeNode(8);
-            root.right = new TreeNode(2);
-            root.left.left = new TreeNode(3);
-            root.left.right = new TreeNode(4);
-            root.right.left = new TreeNode(2);
+            treenode root = new treenode(10);
+            root.left = new treenode(8);
+            root.right = new treenode(2);
+            root.left.left = new treenode(3);
+            root.left.right = new treenode(4);
+            root.right.left = new treenode(2);
             int num = 23;
             boolean sum = rootToLeafPathSum(root,num);
             if(sum == true){

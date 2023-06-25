@@ -3,8 +3,8 @@ import java.util.Queue;
 
 class Node{
     int data;
-    Node left;
-    Node right;
+    node left;
+    node right;
     Node(int data){
         this.data = data;
         left = null;
@@ -12,16 +12,16 @@ class Node{
     }
 }
 public class HeightOfBinaryTree {
-    private static int heightOftree(Node root){
+    private static int heightOftree(node root){
         //using level order traversal or breadth first search (using queue data structure)
         int height = 0;
-        Queue<Node> q = new LinkedList<>();
+        Queue<node> q = new LinkedList<>();
         q.add(root);
         while(!q.isEmpty()){
             height++;
             int n = q.size();
             for(int i=0;i<n;i++){
-                Node cur = q.poll();
+                node cur = q.poll();
                 if(cur.left!= null){
                     q.offer(cur.left);
                 }
@@ -35,11 +35,11 @@ public class HeightOfBinaryTree {
     }
     public static void main(String[] args){
             //building binary tree
-            Node root = new Node(10);
-            root.left = new Node(5);
-            root.right = new Node(20);
-            root.left.left = new Node(2);
-            root.left.right = new Node(6);
+            node root = new node(10);
+            root.left = new node(5);
+            root.right = new node(20);
+            root.left.left = new node(2);
+            root.left.right = new node(6);
 
             int height = heightOftree(root);
             System.out.println("The height of given binary tree is:"+height);

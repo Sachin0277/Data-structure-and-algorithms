@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node {
+class Node3 {
     char data;
-    Node left;
-    Node right;
-    Node(char data){
+    node left;
+    node right;
+    Node3(char data){
         this.data = data;
         left = null;
         right = null;
     }
 }
 public class PrintSpiralTraversal {
-    private static ArrayList<ArrayList<Character>> spiralTraversal(Node root){
+    private static ArrayList<ArrayList<Character>> spiralTraversal(node root){
             ArrayList<ArrayList<Character>> wrapList = new ArrayList<>();
             int level = 0;
-            Queue<Node> q= new LinkedList<>();
+            Queue<node> q= new LinkedList<>();
             boolean flag = true;
             q.add(root);
             while(!q.isEmpty()){
@@ -40,13 +40,13 @@ public class PrintSpiralTraversal {
         return wrapList;
     }
     public static void main(String[] args) {
-        Node root = new Node('A');
-        root.left = new Node('B');
-        root.right = new Node('C');
-        root.left.left = new Node('D');
-        root.left.right = new Node('E');
-        root.right.left = new Node('F');
-        root.right.right = new Node('G');
+        node root = new node('A');
+        root.left = new node('B');
+        root.right = new node('C');
+        root.left.left = new node('D');
+        root.left.right = new node('E');
+        root.right.left = new node('F');
+        root.right.right = new node('G');
         ArrayList<ArrayList<Character>> res = new ArrayList<>();
 
         res = spiralTraversal(root);
